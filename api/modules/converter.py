@@ -1,4 +1,4 @@
-from validator import isValidCsv, isValidMarkdown
+from modules.validator import isValidCsv, isValidMarkdown
 
 def toMarkdown(lines):
     isValidCsv(lines)

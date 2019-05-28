@@ -1,4 +1,5 @@
 import unicodedata
+from functools import reduce
 
 def align(lines):
     colsList = [line.split('|') for line in lines]
@@ -12,7 +13,7 @@ def _maxWidths(colsList):
     return reduce(_pickMax, lens)
  
 def _strwidth(s):
-    return sum([_charwidth(c) for c in s.decode('utf-8')])
+    return sum([_charwidth(c) for c in s])
 
 def _charwidth(c):
     return 2 if unicodedata.east_asian_width(c) in ['F', 'W', 'A'] else 1
